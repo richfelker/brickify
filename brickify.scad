@@ -5,7 +5,7 @@ module brickify(
 	std="lego",
 	maxrows=12,
 	maxcols=12,
-	units="absolute",
+	units="studs",
 	stud_fudge=.2,
 	holed_studs=undef,
 	no_studs=false,
