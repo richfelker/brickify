@@ -26,7 +26,7 @@ module brickify(
 	stud_inner_diameter = is_undef(holed_studs)
 		? (holed_studs || std=="duplo") ? stud_diameter-1 : 0 : 0;
 
-	large_post_diameter = sqrt(2)*spacing - stud_diameter + .1;
+	large_post_diameter = sqrt(2)*spacing - stud_diameter;
 	small_post_diameter = spacing - stud_diameter;
 
 	large_post_inner_diameter = std=="duplo"
