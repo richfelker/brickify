@@ -26,6 +26,13 @@ module brickify(
 	stud_inner_diameter = is_undef(holed_studs)
 		? (holed_studs || std=="duplo") ? stud_diameter-1 : 0 : 0;
 
+	large_post_diameter = sqrt(2)*spacing - stud_diameter + .1;
+	small_post_diameter = spacing - stud_diameter;
+
+	large_post_inner_diameter = std=="duplo"
+		? large_post_diameter - 2*post_thickness
+		: stud_diameter + stud_fudge;
+
 	rows = maxrows;
 	cols = maxcols;
 	epsilon = .01;
@@ -54,7 +61,7 @@ module brickify(
 	}
 
 	module large_post_outlines() {
-		d = sqrt(2)*spacing - stud_diameter + .1;
+		d = large_post_diameter;
 		intersection() {
 			offset(r=d/2-epsilon)
 			intersection() {
@@ -66,7 +73,7 @@ module brickify(
 	}
 
 	module small_post_outlines() {
-		d = spacing-stud_diameter;
+		d = small_post_diameter;
 		difference() {
 			intersection() {
 				offset(r=d/2-epsilon)
@@ -103,7 +110,9 @@ module brickify(
 	module make_posts() {
 		difference() {
 			post_outlines() children();
-			offset(r=-post_thickness) post_outlines() children();
+			offset(r=large_post_inner_diameter/2-epsilon)
+			large_post_points() children();
+			offset(r=-post_thickness) small_post_outlines() children();
 		}
 	}
 
