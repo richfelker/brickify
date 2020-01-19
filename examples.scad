@@ -2,7 +2,7 @@ use <brickify.scad>;
 
 compat = "lego"; // [lego, duplo]
 shape = "rectangle"; // [rectangle, oval, triangle, blob, heart, wing, star, text]
-height = 6; // [2,3,6]
+height = 6; // [2,3,6,12]
 round_corners = 0; // .1
 xscale = 4; // .125
 yscale = 2; // .125

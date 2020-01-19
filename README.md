@@ -29,8 +29,8 @@ As an example, `brickify() square([2,4]);` will produce a full height
 - `height` - in logical units (1.6 mm for LEGO, 3.2 mm for DUPLO)
 
 For LEGO, the standard heights are 2 (plate) and 6 (brick). For DUPLO,
-they are 3 (half height, matching LEGO brick) and 6 (full height,
-double LEGO).
+they are 3 (half height, matching LEGO brick) 6 (full height, double
+LEGO), and 12 (double DUPLO).
 
 
 ## Custom stud layout
