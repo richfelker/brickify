@@ -110,8 +110,8 @@ module brickify(
 	module make_posts() {
 		difference() {
 			post_outlines() children();
-			offset(r=large_post_inner_diameter/2-epsilon)
-			large_post_points() children();
+			offset(r=(large_post_inner_diameter-large_post_diameter)/2)
+			large_post_outlines() children();
 			offset(r=-post_thickness) small_post_outlines() children();
 		}
 	}
