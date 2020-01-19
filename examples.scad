@@ -8,8 +8,9 @@ xscale = 4; // .125
 yscale = 2; // .125
 text = "C";
 no_studs=false;
+full_splines=true;
 
-brickify(std=compat,units="studs",no_studs=no_studs,height=height)
+brickify(std=compat,units="studs",no_studs=no_studs,height=height,full_splines=full_splines)
 offset(r=round_corners) offset(delta=-round_corners)
 scale([xscale,yscale])
 {
